@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding SPACs</title>
+<style>
+  :root {
+    --bg: #fffdf8;
+    --text: #2a2a2e;
+    --muted: #6b6b74;
+    --accent: #1a5fb4;
+    --card: #f4f1ea;
+    --border: #e3ded3;
+    --warn-bg: #fdf3e3;
+    --warn-border: #e8c98a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16161a;
+      --text: #e6e4df;
+      --muted: #9b9aa3;
+      --accent: #6ca0e8;
+      --card: #1f1f26;
+      --border: #32323c;
+      --warn-bg: #2a2419;
+      --warn-border: #6b5524;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+    font-size: 1.06rem;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+  h1, h2, h3 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.25;
+  }
+  h1 { font-size: 2.2rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-top: 0; font-style: italic; }
+  h2 {
+    margin-top: 2.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h3 { margin-top: 1.75rem; }
+  a { color: var(--accent); }
+  .lifecycle {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .lifecycle li {
+    position: relative;
+    padding: 0.9rem 1rem 0.9rem 3.4rem;
+    margin-bottom: 0.6rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .lifecycle li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0.9rem;
+    top: 0.95rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lifecycle strong { display: block; margin-bottom: 0.15rem; }
+  .callout {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-left: 4px solid var(--warn-border);
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    margin: 1.5rem 0;
+  }
+  .callout strong { font-family: -apple-system, sans-serif; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.97rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.4rem; }
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Understanding SPACs</h1>
+  <p class="subtitle">A plain-English guide to blank-check companies — what they are, how they work, and what to know before investing.</p>
+
+  <h2>What is a SPAC?</h2>
+  <p>
+    A <strong>SPAC</strong> (Special Purpose Acquisition Company) is a shell company with no
+    actual business operations. It exists for one purpose: raise money through an IPO, then
+    find a private company to merge with — which takes that private company public without
+    going through a traditional IPO.
+  </p>
+  <p>
+    People often call them <em>"blank-check companies"</em> because investors hand over money
+    before knowing what business they'll end up owning.
+  </p>
+
+  <h2>The SPAC lifecycle</h2>
+  <ol class="lifecycle">
+    <li>
+      <strong>IPO</strong>
+      The SPAC sells shares to the public, almost always at $10 per unit. The money goes
+      into a trust account.
+    </li>
+    <li>
+      <strong>The hunt</strong>
+      The sponsors — the people who created the SPAC — have a deadline, usually 18–24 months,
+      to find a private company to acquire.
+    </li>
+    <li>
+      <strong>The merger ("de-SPAC")</strong>
+      If shareholders approve the deal, the SPAC merges with the target and your SPAC shares
+      become shares of the new public company. Before the vote, you have the right to
+      <strong>redeem</strong> your shares for roughly the $10 trust value instead of riding along.
+    </li>
+    <li>
+      <strong>Liquidation</strong>
+      If no deal happens by the deadline, the trust is returned to shareholders — again,
+      roughly $10 plus a bit of interest.
+    </li>
+  </ol>
+
+  <h2>"Can I invest in a profitable SPAC?"</h2>
+  <div class="callout">
+    <strong>The catch:</strong> a SPAC itself is never profitable. It has no revenue, no
+    products, no operations — it's just a pile of cash in a trust. So you can't screen for
+    "profitable SPACs" the way you'd screen for profitable companies.
+  </div>
+  <p>What you <em>can</em> do depends on the stage at which you invest:</p>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>What you're buying</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pre-merger</strong></td>
+        <td>A bet on the sponsors finding a good deal. The downside is somewhat protected
+        (you can redeem for ~$10), but the upside depends entirely on a deal that doesn't
+        exist yet.</td>
+      </tr>
+      <tr>
+        <td><strong>Target announced</strong></td>
+        <td>Now you can actually evaluate the target company's financials — including whether
+        <em>that company</em> is profitable. Historically, most SPAC targets have been
+        early-stage, unprofitable companies; that's often why they chose a SPAC over a
+        traditional IPO, which carries stricter scrutiny.</td>
+      </tr>
+      <tr>
+        <td><strong>Post-merger</strong></td>
+        <td>At this point it's just a regular public stock, and normal stock analysis applies.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Things to know before putting money in</h2>
+  <ul>
+    <li>
+      <strong>The track record is rough.</strong> The 2020–2021 SPAC boom ended badly — the
+      majority of companies that went public via SPAC traded well below $10 afterward, and a
+      meaningful number went bankrupt (Lordstown Motors, Virgin Orbit, and others).
+    </li>
+    <li>
+      <strong>Sponsor incentives are misaligned with yours.</strong> Sponsors typically get
+      ~20% of the SPAC's equity nearly free (the "promote"), so they profit even from a
+      mediocre deal. They're motivated to close <em>any</em> deal before the deadline — not
+      necessarily a good one.
+    </li>
+    <li>
+      <strong>Dilution.</strong> Warrants and the sponsor promote dilute regular shareholders,
+      which is part of why post-merger prices often sag.
+    </li>
+    <li>
+      <strong>The redemption right is your safety net.</strong> Buying below trust value
+      pre-merger and redeeming is a low-risk arbitrage strategy some funds run, though returns
+      are modest and your money is locked up.
+    </li>
+  </ul>
+
+  <h2>The bottom line</h2>
+  <p>
+    SPACs trade like normal stocks under regular tickers, so anyone with a brokerage account
+    can buy them. Whether you <em>should</em> is a different question — the structural
+    incentives generally favor sponsors over public shareholders. If you do look at one, the
+    most informative moment is after a target is announced: that's when there's an actual
+    business to evaluate.
+  </p>
+
+  <footer>
+    This page is for educational purposes only and is not investment advice.
+  </footer>
+</main>
+</body>
+</html>
