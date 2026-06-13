@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Understanding SPACs · History, Returns &amp; What Predicts a Good One</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%231c1b19' stroke-width='2.5'/%3E%3Cpath d='M16 9 V23 M19.5 11.5 C19.5 11.5 18 10.5 16 10.5 C14 10.5 12.5 11.5 12.5 13 C12.5 16.5 19.5 15.5 19.5 19 C19.5 20.5 18 21.5 16 21.5 C14 21.5 12.5 20.5 12.5 20.5' fill='none' stroke='%231c1b19' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
-<meta name="description" content="A plain-English guide to SPACs: what blank-check companies are, what the academic returns evidence shows, the factors that predict whether a SPAC yields good returns, and where the structure came from.">
+<meta name="description" content="A plain-English guide to SPACs: what blank-check companies are, who actually makes money on them, and how to tell a survivable deal from a doomed one.">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
 <style>
   :root {
     --bg: #fbfaf7;
@@ -79,6 +80,10 @@
   }
   .value.up { color: var(--green); }
   .value.down { color: var(--red); }
+  .chart-wrap {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 9px; padding: 18px; margin: 16px 0 28px;
+  }
   table {
     width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14px;
     font-variant-numeric: tabular-nums; margin: 16px 0 28px;
@@ -264,8 +269,7 @@
         <tr>
           <td><strong>Be the sponsor</strong></td>
           <td class="num pos">+619%</td>
-          <td>Average sponsor gain of ~$51M per completed deal. Sponsors earned this even on deals where
-          public shareholders lost money.<sup><a href="#sources">[2]</a></sup></td>
+          <td>Average sponsor gain of ~$51M per completed deal.<sup><a href="#sources">[2]</a></sup></td>
         </tr>
       </tbody>
     </table>
@@ -289,7 +293,7 @@
         </tr>
         <tr>
           <td><strong>IPO-stage hedge funds</strong></td>
-          <td>Treasury yield, the redemption floor, and free warrants. The +23.9%/yr
+          <td>Treasury yield, the redemption floor, and free warrants: the pre-merger arbitrage
           trade.<sup><a href="#sources">[2]</a></sup></td>
           <td>Redeem or sell at the merger; the median 2019–20 SPAC saw 73% of public shares
           go<sup><a href="#sources">[1]</a></sup></td>
@@ -316,7 +320,8 @@
     </table>
 
     <h3 id="dilution">Why holding through the merger loses: dilution</h3>
-    <div class="bigstat"><div class="value down">$4.10</div><div class="label">Mean net cash per $10 share delivered at merger in Klausner &amp; Ohlrogge's 2019–20 sample (median $5.70). The rest went to the sponsor promote, fees, and warrants.</div></div>
+    <div class="chart-wrap" style="height:260px"><canvas id="chartHold"></canvas></div>
+    <div class="bigstat"><div class="value down">$4.10</div><div class="label">Mean net cash per $10 share delivered at merger in Klausner &amp; Ohlrogge's 2019–20 sample (median $5.70).</div></div>
     <p class="section-note">
       A $10 SPAC share does not deliver $10 to the merged company. The sponsor's free 20% equity stake
       (the "promote"), underwriting fees, and warrant overhang consumed most of it: the SPACs in Klausner
@@ -331,7 +336,7 @@
       Institutional investors exit before bearing these costs. In the 2019–20 sample the median SPAC saw
       <span class="neg">73%</span> of public shares redeemed before the merger, and over a third of SPACs
       had redemptions above 90%.<sup><a href="#sources">[1]</a></sup> The losses concentrate on whoever
-      stays in, disproportionately retail investors who bought after a deal was announced.
+      stays in.
     </p>
 
     <h3 id="profitable">"Can I invest in a profitable SPAC?"</h3>
@@ -354,8 +359,7 @@
       Treasury-like yield with a hard floor. Every announced deal adds a free option: if the market likes
       the target and the price rises above trust value, sell into the rise; if it does not, redeem for
       the trust value at the merger vote, or collect the cash at liquidation. Hedge funds run this at
-      scale, which is why the median SPAC in the 2019–20 sample saw 73% of public shares
-      redeemed.<sup><a href="#sources">[1]</a></sup>
+      scale.
     </p>
     <div class="bigstat"><div class="value">$10.05+</div><div class="label">Typical overfunded trust level in the 2025–26 market. Sponsors now deposit more than $10 per unit to raise the redemption floor, often instead of issuing warrants.<sup><a href="#sources">[18]</a></sup></div></div>
     <p class="section-note">
@@ -480,11 +484,10 @@
       </tbody>
     </table>
     <div class="callout">
-      <strong>Summary:</strong> the best-evidenced way to make money in SPACs is to buy pre-merger at or
-      below trust value, collect the yield and any deal-announcement gain, and exit by redemption or sale
-      at the merger. Holding through a merger requires all of the following: low dilution, low
-      redemptions, a deal done early in the window, a profitable target with real revenue, and a credible
-      sponsor. Even then, the structure favors the other parties at the table.
+      <strong>Summary:</strong> holding through a merger requires all of these to line up at once: low
+      dilution, low redemptions, a deal done early in the window, a profitable target with real revenue,
+      and a credible sponsor. Miss one and the structure favors every other party at the table. The
+      pre-merger arbitrage (Part&nbsp;2) is the only public-side trade the evidence actually favors.
     </div>
   </section>
 
@@ -578,6 +581,15 @@
       </tbody>
     </table>
 
+    <div class="callout">
+      <strong>The factor that did not separate them: dilution.</strong> Lordstown delivered about $4.11
+      of cash per $10 share, deep dilution typical of the era.<sup><a href="#sources">[24]</a></sup>
+      DraftKings was no better: its SPAC supplied roughly $700M of cash for about 22% of the company,
+      barely $2 behind each share.<sup><a href="#sources">[25]</a></sup> Net cash per share is the
+      dominant predictor across hundreds of deals (Part&nbsp;3), but here both sides were badly diluted,
+      so it was not the discriminator. The target was. Dilution is the headwind every holder fights; a
+      real business overcomes it, and a fake one cannot be saved from it.
+    </div>
     <div class="callout">
       <strong>Two caveats.</strong> Hindsight bias is a fair objection. The answer to it is that every
       signal in the table sat in the announcement-day filings. Timing is the second caveat: Lordstown
@@ -781,6 +793,10 @@
         <a href="https://arc-group.com/resurgence-spacs-2025/">arc-group.com</a></li>
       <li>Citrin Cooperman, "SPACs: What Are They and How Are They Taxed" ·
         <a href="https://www.citrincooperman.com/In-Focus-Resource-Center/SPACs--What-Are-They-and-How-Are-They-Taxed">citrincooperman.com</a></li>
+      <li>DiamondPeak Holdings / Lordstown Motors investor presentation (Aug 2020), SEC EDGAR (~$675M cash, ~164M pro forma shares) ·
+        <a href="https://www.sec.gov/Archives/edgar/data/1759546/000121390020019762/ea124863ex99-2_diamondpeak.htm">sec.gov</a></li>
+      <li>DraftKings Inc., Form 424B3 (2020), SEC EDGAR (Diamond Eagle trust + PIPE cash, post-merger ownership) ·
+        <a href="https://www.sec.gov/Archives/edgar/data/0001772757/000110465920095004/tm2027130d2_424b3.htm">sec.gov</a></li>
     </ol>
   </section>
 
@@ -808,6 +824,63 @@
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
   sections.forEach(s => observer.observe(s));
+
+  // Bar chart: holding through the merger loses, vs the market
+  if (window.Chart) {
+    const css = getComputedStyle(document.documentElement);
+    const green = css.getPropertyValue('--green').trim();
+    const red = css.getPropertyValue('--red').trim();
+    const muted = css.getPropertyValue('--muted').trim();
+    const border = css.getPropertyValue('--border').trim();
+    const data = [
+      { label: 'Broad market (1 yr)', v: 19.4 },
+      { label: 'Post-merger median (3 mo)', v: -14.5 },
+      { label: 'Post-merger average (1 yr)', v: -11.3 },
+      { label: 'Bubble cohort (to Dec 2022)', v: -62 },
+    ];
+    new Chart(document.getElementById('chartHold'), {
+      type: 'bar',
+      data: {
+        labels: data.map(d => d.label),
+        datasets: [{
+          data: data.map(d => d.v),
+          backgroundColor: data.map(d => d.v >= 0 ? green : red),
+          borderRadius: 3,
+          barThickness: 22,
+        }],
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Hold through the merger, and you lose',
+            color: muted,
+            font: { family: '-apple-system, system-ui, sans-serif', size: 13, weight: '700' },
+            padding: { bottom: 12 },
+          },
+          tooltip: {
+            callbacks: { label: c => (c.raw > 0 ? '+' : '') + c.raw + '%' },
+          },
+        },
+        scales: {
+          x: {
+            ticks: { color: muted, callback: v => v + '%', font: { family: '-apple-system, system-ui, sans-serif', size: 11 } },
+            grid: { color: border },
+            border: { color: border },
+          },
+          y: {
+            ticks: { color: muted, font: { family: '-apple-system, system-ui, sans-serif', size: 11 } },
+            grid: { display: false },
+            border: { color: border },
+          },
+        },
+      },
+    });
+  }
 </script>
 
 </body>
