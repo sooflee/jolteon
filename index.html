@@ -132,7 +132,7 @@
   <div class="container">
     <div class="kick">Market Research · SPACs</div>
     <h1>Understanding SPACs</h1>
-    <p class="subtitle">What blank-check companies are, what the returns evidence shows, which factors predict a good one, and where the structure came from.</p>
+    <p class="subtitle">What blank-check companies are, who actually makes money on them, and how to tell a survivable deal from a doomed one.</p>
     <span class="asof">Research compiled June 12, 2026 · figures from the cited academic studies; study periods differ</span>
   </div>
 </header>
@@ -141,6 +141,7 @@
   <a href="#basics">The basics</a>
   <a class="sub" href="#lifecycle">The lifecycle</a>
   <a href="#returns">1 · The returns evidence</a>
+  <a class="sub" href="#seats">Who sits where</a>
   <a class="sub" href="#dilution">Why holding loses</a>
   <a class="sub" href="#profitable">The "profitable" question</a>
   <a href="#arbitrage">2 · The arbitrage trade</a>
@@ -152,7 +153,6 @@
   <a href="#scams">5 · Useful or scam?</a>
   <a class="sub" href="#fraud">Fraud tells</a>
   <a class="sub" href="#badstructure">Legal-but-bad tells</a>
-  <a class="sub" href="#seats">Who sits where</a>
   <a class="sub" href="#verdict">Scam or inefficient?</a>
   <a href="#history">6 · The history</a>
   <a class="sub" href="#marketnow">The market now</a>
@@ -171,12 +171,13 @@
       target.
     </p>
     <div class="callout">
-      <strong>The thesis of this page:</strong> the SPAC structure is legal and fully disclosed, but it
-      benefits every party except the shareholder who holds through the merger. The data supports three
-      conclusions. Pre-merger shares bought at or below trust value have been a good trade
-      (Parts&nbsp;1–2). Post-merger shares have been a bad one, because dilution removes roughly half
-      the cash behind each $10 share (Parts&nbsp;1 and&nbsp;3). The disclosed numbers separate good
-      deals from bad ones before the merger closes (Parts&nbsp;4–5).
+      <strong>The thesis of this page:</strong> whether a SPAC is a good investment depends on which
+      seat you hold, and the only reliably great seat is the sponsor's. Sponsors averaged +619% per
+      completed deal, paid even when the company flopped. Public shareholders who held through the
+      merger lost, because dilution removes roughly half the cash behind each $10 share (Parts&nbsp;1
+      and&nbsp;3). The one public-side exception is the pre-merger arbitrage, a floor-protected trade
+      that earns the trust yield plus a free option (Part&nbsp;2). The disclosed numbers separate the
+      survivable deals from the doomed ones before the merger closes (Parts&nbsp;4–5).
     </div>
     <nav class="toc" aria-label="Contents">
       <a href="#returns">The returns evidence</a>
@@ -225,10 +226,11 @@
 
   <section id="returns">
     <div class="eyebrow">Part 1 · The returns evidence</div>
-    <h2>Pre-merger gains, post-merger losses</h2>
+    <h2>Who makes money on SPACs</h2>
     <p class="section-note">
-      SPAC returns split into two distinct games. Pre-merger shares have been a reliably decent trade.
-      Post-merger shares have been a reliably bad one. The table shows the evidence.
+      SPAC returns sort by seat, not by deal. Pre-merger shares have been a reliably decent trade.
+      Post-merger shares have been a reliably bad one. Sponsors won either way. The first table shows
+      the returns by strategy; the second shows who fills each seat.
     </p>
     <table>
       <thead>
@@ -269,6 +271,51 @@
       </tbody>
     </table>
 
+    <h3 id="seats">Who sits where</h3>
+    <p class="section-note" style="margin-bottom:10px">
+      Each seat at the SPAC table has different economics. This table is the page's thesis in one view.
+      Retail ownership concentrates in the post-announcement and post-merger window, which is the losing
+      seat.<sup><a href="#sources">[21]</a></sup>
+    </p>
+    <table>
+      <thead>
+        <tr><th>Seat</th><th>What they get</th><th>When they leave</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sponsor</strong></td>
+          <td>The ~20% promote nearly free, plus founder warrants. Average gain +619% per completed
+          deal.<sup><a href="#sources">[3]</a></sup></td>
+          <td>Locked up after the merger, but profits even on deals where public shareholders lose</td>
+        </tr>
+        <tr>
+          <td><strong>IPO-stage hedge funds</strong></td>
+          <td>Treasury yield, the redemption floor, and free warrants. The +23.9%/yr
+          trade.<sup><a href="#sources">[3]</a></sup></td>
+          <td>Redeem or sell at the merger; the median 2019–20 SPAC saw 73% of public shares
+          go<sup><a href="#sources">[2]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>PIPE investors</strong></td>
+          <td>Entry at the $10 deal price, sometimes at a discount, with size and information
+          advantages</td>
+          <td>After the merger, often early via registered shares</td>
+        </tr>
+        <tr>
+          <td><strong>Target and its VCs</strong></td>
+          <td>A public listing with speed and price certainty, and (pre-2024) marketable projections.
+          The structure's costs land elsewhere.<sup><a href="#sources">[3]</a>,<a href="#sources">[5]</a></sup></td>
+          <td>Lockups, typically about six months</td>
+        </tr>
+        <tr>
+          <td><strong>Post-announcement retail</strong></td>
+          <td class="neg">The story. This seat absorbs the dilution that every other seat
+          avoids.<sup><a href="#sources">[21]</a></sup></td>
+          <td>Last in, and most often still holding through the merger</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h3 id="dilution">Why holding through the merger loses: dilution</h3>
     <div class="bigstat"><div class="value down">$4.10</div><div class="label">Mean net cash per $10 share delivered at merger in Klausner &amp; Ohlrogge's 2019–20 sample (median $5.70). The rest went to the sponsor promote, fees, and warrants.</div></div>
     <p class="section-note">
@@ -293,32 +340,10 @@
       <strong>A SPAC is never profitable.</strong> It has no revenue, no products, and no operations. It
       holds cash in a trust. You cannot screen for "profitable SPACs" the way you screen for profitable
       companies. The question becomes answerable once a target is announced, and then it applies to the
-      target.
+      target: most have been early-stage and unprofitable, and avoiding a traditional IPO's stricter
+      scrutiny is often why they chose a SPAC. The pre-merger economics are Part&nbsp;2; the post-merger
+      economics are the dilution math above.
     </div>
-    <table>
-      <thead>
-        <tr><th>Stage</th><th>What you're buying</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Pre-merger</strong></td>
-          <td>A bet on the sponsors finding a good deal, with the trust as a floor. Bought at or below
-          trust value, this is the historically profitable strategy. The profit comes from redeeming or
-          selling at the merger, not from holding through it.</td>
-        </tr>
-        <tr>
-          <td><strong>Target announced</strong></td>
-          <td>An actual business now exists to evaluate, including whether it is profitable. Most SPAC
-          targets have been early-stage and unprofitable. Avoiding a traditional IPO's stricter scrutiny
-          is often why they chose a SPAC.</td>
-        </tr>
-        <tr>
-          <td><strong>Post-merger</strong></td>
-          <td>A regular public stock, and normal stock analysis applies. It carries the dilution described
-          above, which is why the average post-merger SPAC underperforms badly.</td>
-        </tr>
-      </tbody>
-    </table>
   </section>
 
   <section id="arbitrage">
@@ -614,109 +639,30 @@
     </table>
 
     <h3 id="badstructure">Legal-but-bad tells</h3>
-    <p class="section-note" style="margin-bottom:10px">
-      Most investor losses come from legal structures, not fraud. These are the Part&nbsp;3 predictors
-      applied as a checklist:
+    <p class="section-note">
+      Most investor losses come from legal structures, not fraud. Four of the tells are the Part&nbsp;3
+      predictors read straight from the filings: net cash per share far below $10 in the proxy's dilution
+      table, heavy redemptions (announced before closing), a deal struck near the deadline, and a
+      pre-revenue target.<sup><a href="#sources">[2]</a>,<a href="#sources">[3]</a>,<a href="#sources">[4]</a></sup>
+      The fifth is skin in the game. Did the sponsor buy meaningful shares at $10 alongside you? Did a
+      credible PIPE invest at the deal price? Did the sponsor forfeit part of its promote or extend its
+      lockup? Aligned sponsors do these things; extractive ones don't.
     </p>
-    <table>
-      <thead>
-        <tr><th>Tell</th><th>What to check</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Dilution</strong></td>
-          <td>The merger proxy discloses net cash per share: how much money survives the sponsor's free
-          20% promote, the fees, and the warrants. If net cash is far below $10 and the deal is priced as
-          if it were not, the gap comes out of
-          you.<sup><a href="#sources">[2]</a>,<a href="#sources">[4]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>High redemptions</strong></td>
-          <td>If 80–90% of the institutional money took the $10 exit before the merger, the smart money
-          has voted. Redemption figures are announced before closing.<sup><a href="#sources">[3]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>Deadline desperation</strong></td>
-          <td>A deal struck in the final months before the SPAC expires means the sponsor chose between
-          any deal and losing their entire promote. Their incentive is not your
-          incentive.<sup><a href="#sources">[3]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>A pre-revenue target</strong></td>
-          <td>Returns were lower for targets under $100M in trailing revenue and lower still for
-          unprofitable ones. "We chose a SPAC because a traditional IPO wouldn't take us" is the subtext
-          of many of these deals.<sup><a href="#sources">[3]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>No skin in the game</strong></td>
-          <td>Did the sponsor buy meaningful shares at $10 alongside you? Did a credible PIPE invest at
-          the deal price? Did the sponsor forfeit part of its promote or extend its lockup? Aligned
-          sponsors do these things; extractive ones don't.</td>
-        </tr>
-      </tbody>
-    </table>
 
     <div class="callout">
       <strong>When a SPAC is useful:</strong> a credible sponsor with relevant operating experience takes
       a real-revenue company public on disciplined terms, with low dilution and investors who chose to
-      stay in. Dilution, desperation, or hype turns it into a wealth-transfer machine. The
-      redemption right protects you in either case: until the merger closes you can take roughly $10
-      back, and no legitimate argument for a deal requires giving that up early.
+      stay in. Dilution, desperation, or hype turns it into a wealth-transfer machine. Either way, no
+      legitimate deal requires you to give up your redemption right early.
     </div>
-
-    <h3 id="seats">Who sits where</h3>
-    <p class="section-note" style="margin-bottom:10px">
-      Each seat at the SPAC table has different economics. This table is the page's thesis in one view.
-      Retail ownership concentrates in the post-announcement and post-merger window, which is the losing
-      seat.<sup><a href="#sources">[21]</a></sup>
-    </p>
-    <table>
-      <thead>
-        <tr><th>Seat</th><th>What they get</th><th>When they leave</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Sponsor</strong></td>
-          <td>The ~20% promote nearly free, plus founder warrants. Average gain +619% per completed
-          deal.<sup><a href="#sources">[3]</a></sup></td>
-          <td>Locked up after the merger, but profits even on deals where public shareholders lose</td>
-        </tr>
-        <tr>
-          <td><strong>IPO-stage hedge funds</strong></td>
-          <td>Treasury yield, the redemption floor, and free warrants. The +23.9%/yr
-          trade.<sup><a href="#sources">[3]</a></sup></td>
-          <td>Redeem or sell at the merger; the median 2019–20 SPAC saw 73% of public shares
-          go<sup><a href="#sources">[2]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>PIPE investors</strong></td>
-          <td>Entry at the $10 deal price, sometimes at a discount, with size and information
-          advantages</td>
-          <td>After the merger, often early via registered shares</td>
-        </tr>
-        <tr>
-          <td><strong>Target and its VCs</strong></td>
-          <td>A public listing with speed and price certainty, and (pre-2024) marketable projections.
-          The structure's costs land elsewhere.<sup><a href="#sources">[3]</a>,<a href="#sources">[5]</a></sup></td>
-          <td>Lockups, typically about six months</td>
-        </tr>
-        <tr>
-          <td><strong>Post-announcement retail</strong></td>
-          <td class="neg">The story. This seat absorbs the dilution that every other seat
-          avoids.<sup><a href="#sources">[21]</a></sup></td>
-          <td>Last in, and most often still holding through the merger</td>
-        </tr>
-      </tbody>
-    </table>
 
     <h3 id="verdict">So are SPACs scams, or just inefficient?</h3>
     <p class="section-note">
-      SPACs benefit more than one party, so the premise needs one correction. Sponsors averaged +619% per
-      completed deal. IPO-stage funds earned +23.9% per year with a floor under them. Targets received
-      speed, price certainty, and, before 2024, the right to market projections, with the structure's
-      costs shifted off them.<sup><a href="#sources">[3]</a></sup> The SPAC benefits every party at the
-      table except the shareholder who holds through the merger. Retail investors who bought after a deal
-      announcement disproportionately filled that seat.
+      SPACs benefit more than one party, so the premise needs one correction. The Part&nbsp;1 seat table
+      shows it: the sponsor, the IPO-stage funds, and the target all get paid, and the structure's costs
+      land on the shareholder who holds through the
+      merger.<sup><a href="#sources">[3]</a>,<a href="#sources">[5]</a></sup> Retail investors who bought
+      after a deal announcement disproportionately filled that seat.<sup><a href="#sources">[21]</a></sup>
     </p>
     <p class="section-note">
       The accurate verdict is inefficiency, not fraud. A scam requires deception, and the SPAC's costs are
