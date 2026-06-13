@@ -16,7 +16,7 @@
     --muted: #6f6a62;
     --green: #1f6f54;
     --red: #b3382e;
-    --accent: #5b3a86; /* single structural accent (violet); red/green are reserved for data */
+    --accent: #7a52c7; /* single structural accent (light violet); red/green are reserved for data */
     --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
   }
@@ -143,14 +143,17 @@
   <a href="#returns">1 · The returns evidence</a>
   <a class="sub" href="#dilution">Why holding loses</a>
   <a class="sub" href="#profitable">The "profitable" question</a>
-  <a href="#predictors">2 · What predicts returns</a>
-  <a href="#casestudy">3 · The case study</a>
+  <a href="#arbitrage">2 · The arbitrage trade</a>
+  <a class="sub" href="#warrants">Warrants</a>
+  <a class="sub" href="#howto">Doing it in practice</a>
+  <a href="#predictors">3 · What predicts returns</a>
+  <a href="#casestudy">4 · The case study</a>
   <a class="sub" href="#scorecard">The scorecard</a>
-  <a href="#scams">4 · Useful or scam?</a>
+  <a href="#scams">5 · Useful or scam?</a>
   <a class="sub" href="#fraud">Fraud tells</a>
   <a class="sub" href="#badstructure">Legal-but-bad tells</a>
   <a class="sub" href="#verdict">Scam or inefficient?</a>
-  <a href="#history">5 · The history</a>
+  <a href="#history">6 · The history</a>
   <a href="#sources">Sources</a>
 </nav>
 
@@ -161,20 +164,21 @@
     <p class="section-note">
       A <strong>SPAC</strong> (Special Purpose Acquisition Company) is a shell company with no business
       operations. It exists to raise money through an IPO and then merge with a private company. The
-      merger takes the private company public without a traditional IPO. People call SPACs
-      <em>"blank-check companies"</em> because investors hand over money before knowing what business
-      they will end up owning.
+      merger takes the private company public without a traditional IPO. SPACs are called
+      <em>"blank-check companies"</em> because investors fund them before knowing the acquisition
+      target.
     </p>
     <div class="callout">
       <strong>The thesis of this page:</strong> the SPAC structure is legal and fully disclosed, but it
       benefits every party except the shareholder who holds through the merger. The data supports three
       conclusions. Pre-merger shares bought at or below trust value have been a good trade
-      (Part&nbsp;1). Post-merger shares have been a bad one, because dilution removes roughly half the
-      cash behind each $10 share (Parts&nbsp;1–2). The disclosed numbers separate good deals from bad
-      ones before the merger closes (Parts&nbsp;3–4).
+      (Parts&nbsp;1–2). Post-merger shares have been a bad one, because dilution removes roughly half
+      the cash behind each $10 share (Parts&nbsp;1 and&nbsp;3). The disclosed numbers separate good
+      deals from bad ones before the merger closes (Parts&nbsp;4–5).
     </div>
     <nav class="toc" aria-label="Contents">
       <a href="#returns">The returns evidence</a>
+      <a href="#arbitrage">The arbitrage trade</a>
       <a href="#predictors">What predicts returns</a>
       <a href="#casestudy">The case study</a>
       <a href="#scams">Useful or scam?</a>
@@ -191,20 +195,22 @@
         <tr>
           <td><strong>1 · IPO</strong></td>
           <td>The SPAC sells units to the public, almost always at $10. A unit is usually a share plus a
-          fraction of a warrant. The cash goes into a trust account.</td>
+          fraction of a warrant, the right to buy another share later at a fixed price, usually $11.50.
+          The cash goes into a trust account.</td>
           <td>Cash in trust backs your shares at ~$10</td>
         </tr>
         <tr>
           <td><strong>2 · The hunt</strong></td>
           <td>The sponsors, the people who created the SPAC, have a deadline of usually 18–24 months to
-          find a private company to acquire.</td>
+          find a private company to acquire. Their pay is the "promote": a nearly free stake of about
+          20% of the SPAC's shares, worthless unless a deal closes.</td>
           <td>You hold a claim on the trust plus a free option on the deal</td>
         </tr>
         <tr>
           <td><strong>3 · The merger ("de-SPAC")</strong></td>
           <td>If shareholders approve, the SPAC merges with the target and SPAC shares become shares of
           the new public company.</td>
-          <td>Before the vote you may <strong>redeem</strong> for roughly the $10 trust value instead of riding along</td>
+          <td>Before the vote you may <strong>redeem</strong>: return your shares for your portion of the trust, roughly $10, instead of riding along</td>
         </tr>
         <tr>
           <td><strong>4 · Liquidation</strong></td>
@@ -313,8 +319,83 @@
     </table>
   </section>
 
+  <section id="arbitrage">
+    <div class="eyebrow">Part 2 · The arbitrage trade</div>
+    <h2>How the pre-merger trade works</h2>
+    <p class="section-note">
+      The +23.9%/yr figure in Part&nbsp;1 comes from one repeatable trade.<sup><a href="#sources">[6]</a></sup>
+      Buy units at or below the pro-rata trust value. The trust holds Treasuries, so the position pays a
+      Treasury-like yield with a hard floor. Every announced deal adds a free option: if the market likes
+      the target and the price rises above trust value, sell into the rise; if it does not, redeem for
+      the trust value at the merger vote, or collect the cash at liquidation. Hedge funds run this at
+      scale, which is why the median SPAC in the 2019–20 sample saw 73% of public shares
+      redeemed.<sup><a href="#sources">[2]</a></sup>
+    </p>
+    <div class="bigstat"><div class="value">$10.05+</div><div class="label">Typical overfunded trust level in the 2025–26 market. Sponsors now deposit more than $10 per unit to raise the redemption floor, often instead of issuing warrants.<sup><a href="#sources">[19]</a></sup></div></div>
+    <p class="section-note">
+      The trade is real but the edge is thin today. From 2022 to 2024 returns ran close to T-bills plus a
+      small spread, and the Robinson pre-merger SPAC ETF (SPAX) liquidated in early 2025 because the
+      spread barely cleared its fees.<sup><a href="#sources">[18]</a></sup> The CrossingBridge Pre-Merger
+      SPAC ETF (ticker SPC) still runs the strategy, buying only at or below trust value and exiting
+      before mergers complete.<sup><a href="#sources">[17]</a></sup> Deal-announcement premiums returned
+      in 2025 as the market revived, which restored some value to the option half of the trade.
+    </p>
+
+    <h3 id="warrants">The warrant, separately</h3>
+    <p class="section-note">
+      Units split after the IPO, and the share and the warrant trade separately. The warrant is the
+      speculative half of the unit: the right to buy a share at $11.50, typically for five years after
+      the merger. It can be worth a few dollars while the share sits at $10 because it is a long-dated
+      option on the deal working out. Two retail traps live here. Nearly all SPAC warrants carry an
+      early-redemption clause: if the stock holds above a trigger, usually $18, the company can call the
+      warrants for as little as $0.01 on 30 days' notice, and holders who miss the notice lose nearly
+      the entire position.<sup><a href="#sources">[14]</a></sup> And if the SPAC liquidates instead of
+      merging, warrants expire worthless; only the shares get the trust money
+      back.<sup><a href="#sources">[15]</a></sup>
+    </p>
+
+    <h3 id="howto">Doing it in practice</h3>
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Mechanics</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Screen</strong></td>
+          <td>SPACInsider and ListingTrack publish live tables of every SPAC's trust value per share,
+          premium or discount to trust, and deal
+          deadline.<sup><a href="#sources">[7]</a>,<a href="#sources">[20]</a></sup> The trade only
+          works at or below trust value.</td>
+        </tr>
+        <tr>
+          <td><strong>Buy</strong></td>
+          <td>Shares and units trade like any stock. Buying at a discount to trust locks in the yield to
+          deadline. The deal option comes free.</td>
+        </tr>
+        <tr>
+          <td><strong>Redeem</strong></td>
+          <td>Redemption goes through your broker's corporate-actions desk, not the trading screen.
+          Brokers set internal cutoffs, commonly two business days before the official deadline, and the
+          last day to buy and still redeem is about two business days before that deadline. Cash arrives
+          two to three business days after the vote.<sup><a href="#sources">[16]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>Or sell</strong></td>
+          <td>If the announcement lifts the price above trust value, selling on the market captures the
+          option value without the redemption process.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>The honest economics today:</strong> a Treasury-like yield, a small spread, and a free
+      option, in exchange for locked-up cash, broker friction, and taxes on the interest. The 2010–2020
+      sample's +23.9%/yr included a once-in-history bubble. The repeatable part of the trade is the
+      floor, not that number.
+    </div>
+  </section>
+
   <section id="predictors">
-    <div class="eyebrow">Part 2 · What predicts returns</div>
+    <div class="eyebrow">Part 3 · What predicts returns</div>
     <h2>The factors, ranked by evidence</h2>
     <p class="section-note" style="margin-bottom:10px">
       Researchers have tested most of the intuitive candidates. <strong>Weight</strong> is how strongly
@@ -327,9 +408,10 @@
       <tbody>
         <tr>
           <td>Net cash per share (dilution)</td>
-          <td>The strongest predictor. Post-merger share value tracks pre-merger net cash per share nearly
-          one-for-one. Shareholders bear essentially the entire cost of the structure. A deal with a small
-          promote, few warrants, and a large PIPE relative to trust keeps more value behind each
+          <td>The strongest predictor. Post-merger share value tracks the Part&nbsp;1 net-cash figure
+          nearly one-for-one. Shareholders bear essentially the entire cost of the structure. A deal with
+          a small promote, few warrants, and a large PIPE (private investment in public equity: outside
+          money committed at the deal price) keeps more value behind each
           share.<sup><a href="#sources">[4]</a></sup></td>
           <td><span class="wt wt-high">High</span></td>
         </tr>
@@ -372,7 +454,7 @@
   </section>
 
   <section id="casestudy">
-    <div class="eyebrow">Part 3 · The case study</div>
+    <div class="eyebrow">Part 4 · The case study</div>
     <h2>Case study: DraftKings vs Lordstown</h2>
     <p class="section-note">
       Both were hyped 2020 SPAC mergers in hot sectors. One trades around three times its $10 trust value
@@ -401,8 +483,8 @@
         </tr>
         <tr>
           <td><strong>The deal</strong></td>
-          <td>~$3.3B three-way merger with sportsbook platform SBTech; ~$380M PIPE (upsized from $304M)
-          from Capital Research, Wellington, and Franklin Templeton<sup><a href="#sources">[10]</a></sup></td>
+          <td>~$3.3B three-way merger with sportsbook platform SBTech; $304M PIPE from Capital Research,
+          Wellington, and Franklin Templeton<sup><a href="#sources">[10]</a></sup></td>
           <td>~$1.6B pro forma equity value; $500M PIPE including $75M from General Motors, partly
           in-kind<sup><a href="#sources">[11]</a></sup></td>
         </tr>
@@ -416,10 +498,10 @@
           <td><strong>Outcome</strong></td>
           <td class="pos">Closed April 2020 with 99.7% approval and negligible redemptions; peaked near
           $74 in March 2021; traded near $30 in June 2026, roughly +200% from trust value</td>
-          <td class="neg">Closed October 2020; peaked ~$31 in February 2021; a March 2021 Hindenburg
-          report found the pre-orders largely fictitious; the CEO resigned June 2021; Chapter&nbsp;11
-          followed in June 2023; the SEC charged it with misleading investors (settled via $25.5M
-          disgorgement); the leftover shell trades under
+          <td class="neg">Peaked near $32 in September 2020, before the merger even closed in October;
+          a March 2021 Hindenburg report found the pre-orders largely fictitious; the CEO resigned June
+          2021; Chapter&nbsp;11 followed in June 2023; the SEC charged it with misleading investors
+          (settled via $25.5M disgorgement); the leftover shell trades around
           $2<sup><a href="#sources">[12]</a>,<a href="#sources">[13]</a></sup></td>
         </tr>
       </tbody>
@@ -471,7 +553,7 @@
   </section>
 
   <section id="scams">
-    <div class="eyebrow">Part 4 · Useful or scam?</div>
+    <div class="eyebrow">Part 5 · Useful or scam?</div>
     <h2>How to spot a bad one</h2>
     <p class="section-note">
       Outright scams are the rare case. The more common danger is a SPAC that is legal but structurally
@@ -522,7 +604,7 @@
 
     <h3 id="badstructure">Legal-but-bad tells</h3>
     <p class="section-note" style="margin-bottom:10px">
-      Most investor losses come from legal structures, not fraud. These are the Part&nbsp;2 predictors
+      Most investor losses come from legal structures, not fraud. These are the Part&nbsp;3 predictors
       applied as a checklist:
     </p>
     <table>
@@ -566,7 +648,7 @@
     <div class="callout">
       <strong>When a SPAC is useful:</strong> a credible sponsor with relevant operating experience takes
       a real-revenue company public on disciplined terms, with low dilution and investors who chose to
-      stay in. It becomes a wealth-transfer machine when dilution, desperation, or hype dominates. The
+      stay in. Dilution, desperation, or hype turns it into a wealth-transfer machine. The
       redemption right protects you in either case: until the merger closes you can take roughly $10
       back, and no legitimate argument for a deal requires giving that up early.
     </div>
@@ -598,7 +680,7 @@
   </section>
 
   <section id="history">
-    <div class="eyebrow">Part 5 · The history</div>
+    <div class="eyebrow">Part 6 · The history</div>
     <h2>From penny-stock fraud to "SPAC 4.0"</h2>
     <table>
       <thead>
@@ -670,7 +752,7 @@
     <div class="eyebrow">Appendix</div>
     <h2>Sources</h2>
     <ol class="sources">
-      <li>Heyman, "From Blank Check to SPAC: The Regulator's Response to the Market, and the Market's Response to the Regulation," <em>Washington University Law Review</em> ·
+      <li>Riemer, "Special Purpose Acquisition Companies: SPAC and SPAN, or Blank Check Redux?," <em>Washington University Law Review</em> 85:931 (2007) ·
         <a href="https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1160&amp;context=law_lawreview">openscholarship.wustl.edu</a></li>
       <li>Klausner, Ohlrogge &amp; Ruan, "A Sober Look at SPACs," <em>Yale Journal on Regulation</em> (2022) ·
         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720919">SSRN 3720919</a></li>
@@ -692,10 +774,24 @@
         <a href="https://deadline.com/2019/12/draftkings-to-go-public-in-3-3b-merger-with-diamond-eagle-1202816362/">deadline.com</a></li>
       <li>Business Wire, "Lordstown Motors Corp. to List on NASDAQ Through Merger With DiamondPeak Holdings Corp." (Aug 3, 2020) ·
         <a href="https://www.businesswire.com/news/home/20200803005226/en/Lordstown-Motors-Corp.-to-List-on-NASDAQ-Through-Merger-With-DiamondPeak-Holdings-Corp.">businesswire.com</a></li>
-      <li>Hindenburg Research, "The Lordstown Motion: How an Ohio Garage Startup Faked Orders" (Mar 2021) ·
+      <li>Hindenburg Research, "The Lordstown Motors Mirage: Fake Orders, Undisclosed Production Hurdles, And A Prototype Inferno" (Mar 2021) ·
         <a href="https://hindenburgresearch.com/lordstown/">hindenburgresearch.com</a></li>
       <li>SEC, "SEC Charges Lordstown Motors with Misleading Investors about Company's Flagship Electric Vehicle" (Feb 29, 2024) ·
         <a href="https://www.sec.gov/newsroom/press-releases/2024-29">sec.gov</a></li>
+      <li>FINRA, "SPAC Warrants: 5 Tips" ·
+        <a href="https://www.finra.org/investors/insights/spac-warrants-5-tips">finra.org</a></li>
+      <li>SEC, "What You Need to Know About SPACs · Investor Bulletin" ·
+        <a href="https://www.sec.gov/oiea/investor-alerts-and-bulletins/what-you-need-know-about-spacs-investor-bulletin">sec.gov</a></li>
+      <li>SPAC Research, FAQ (redemption mechanics for shareholders) ·
+        <a href="https://www.spacresearch.com/faq">spacresearch.com</a></li>
+      <li>CrossingBridge Pre-Merger SPAC ETF (SPC) ·
+        <a href="https://www.crossingbridgefunds.com/spac-etf">crossingbridgefunds.com</a></li>
+      <li>ETF Database, Robinson Pre-Merger SPAC ETF (SPAX, liquidated 2025) ·
+        <a href="https://etfdb.com/etf/SPAX/">etfdb.com</a></li>
+      <li>ARC Group, "Trust Overfunding in a Deal-Starved SPAC Market" ·
+        <a href="https://arc-group.com/trust-overfunding-deal-starved-spac-market/">arc-group.com</a></li>
+      <li>ListingTrack, SPAC market stats and trust screener ·
+        <a href="https://www.listingtrack.io/spacs/stats">listingtrack.io</a></li>
     </ol>
   </section>
 
