@@ -14,6 +14,8 @@
     --border: #e3ded3;
     --warn-bg: #fdf3e3;
     --warn-border: #e8c98a;
+    --bad: #b3261e;
+    --good: #1a7a3c;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -25,6 +27,8 @@
       --border: #32323c;
       --warn-bg: #2a2419;
       --warn-border: #6b5524;
+      --bad: #e08a85;
+      --good: #7cc89a;
     }
   }
   * { box-sizing: border-box; }
@@ -37,7 +41,7 @@
     font-size: 1.06rem;
   }
   main {
-    max-width: 44rem;
+    max-width: 46rem;
     margin: 0 auto;
     padding: 3rem 1.25rem 5rem;
   }
@@ -54,6 +58,7 @@
   }
   h3 { margin-top: 1.75rem; }
   a { color: var(--accent); }
+  sup a { text-decoration: none; font-family: -apple-system, sans-serif; font-size: 0.75em; }
   .lifecycle {
     counter-reset: step;
     list-style: none;
@@ -87,6 +92,33 @@
     justify-content: center;
   }
   .lifecycle strong { display: block; margin-bottom: 0.15rem; }
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--border);
+  }
+  .timeline li {
+    position: relative;
+    padding: 0 0 1.4rem 1.5rem;
+    margin: 0;
+  }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -0.55rem;
+    top: 0.45rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline .era {
+    font-family: -apple-system, sans-serif;
+    font-weight: 700;
+    display: block;
+  }
   .callout {
     background: var(--warn-bg);
     border: 1px solid var(--warn-border);
@@ -115,8 +147,12 @@
     letter-spacing: 0.04em;
     color: var(--muted);
   }
+  .pos { color: var(--good); font-weight: 600; white-space: nowrap; }
+  .neg { color: var(--bad); font-weight: 600; white-space: nowrap; }
   ul { padding-left: 1.3rem; }
   li { margin-bottom: 0.4rem; }
+  .sources { font-size: 0.92rem; }
+  .sources li { margin-bottom: 0.6rem; }
   footer {
     margin-top: 4rem;
     padding-top: 1.25rem;
@@ -129,7 +165,7 @@
 <body>
 <main>
   <h1>Understanding SPACs</h1>
-  <p class="subtitle">A plain-English guide to blank-check companies — what they are, how they work, and what to know before investing.</p>
+  <p class="subtitle">What blank-check companies are, where they came from, what the returns data actually shows, and what predicts a good one.</p>
 
   <h2>What is a SPAC?</h2>
   <p>
@@ -147,8 +183,8 @@
   <ol class="lifecycle">
     <li>
       <strong>IPO</strong>
-      The SPAC sells shares to the public, almost always at $10 per unit. The money goes
-      into a trust account.
+      The SPAC sells units to the public, almost always at $10. A unit is usually a share plus
+      a fraction of a warrant. The cash goes into a trust account.
     </li>
     <li>
       <strong>The hunt</strong>
@@ -164,9 +200,140 @@
     <li>
       <strong>Liquidation</strong>
       If no deal happens by the deadline, the trust is returned to shareholders — again,
-      roughly $10 plus a bit of interest.
+      roughly $10 plus interest.
     </li>
   </ol>
+
+  <h2>A short history of SPACs</h2>
+  <ul class="timeline">
+    <li>
+      <span class="era">1980s — The blank-check fraud era</span>
+      Blank-check shell companies flourished in the penny-stock world and became a vehicle for
+      pump-and-dump fraud: promoters raised money with no disclosed business plan, then looted
+      or manipulated the shells.
+    </li>
+    <li>
+      <span class="era">1990–1992 — Rule 419 kills the blank check</span>
+      Congress passed the Penny Stock Reform Act of 1990, and the SEC's Rule&nbsp;419 imposed
+      escrow and rescission requirements so onerous that blank-check companies were effectively
+      eliminated from the U.S. market.<sup><a href="#src1">[1]</a></sup>
+    </li>
+    <li>
+      <span class="era">1993 — The SPAC is invented</span>
+      Investment banker David Nussbaum of GKN Securities engineered a hybrid: a shell that was
+      legally exempt from Rule&nbsp;419 (because it held over $5&nbsp;million in assets, its
+      stock wasn't "penny stock") but voluntarily adopted nearly all of Rule&nbsp;419's investor
+      protections — the trust account, the redemption right, the deadline. He launched thirteen
+      of these in 1993–94; twelve completed acquisitions. The modern SPAC was
+      born.<sup><a href="#src1">[1]</a></sup>
+    </li>
+    <li>
+      <span class="era">2004–2007 — The second wave</span>
+      SPAC IPOs grew from 12 in 2004 to 65 in 2007, reaching 26.6% of all U.S. IPOs that year.
+      Deals got institutional in scale — Liberty Acquisition Holdings raised $1.035&nbsp;billion
+      in December 2007. By late 2007 SPACs had cumulatively raised over $15&nbsp;billion, with
+      roughly 10% aggregate annualized returns to that point.<sup><a href="#src1">[1]</a></sup>
+      The 2008 financial crisis then froze the market almost completely.
+    </li>
+    <li>
+      <span class="era">2010s — Quiet rebuilding</span>
+      The structure steadily improved for investors — most importantly, redemption rights were
+      decoupled from merger votes, so you could vote yes and still take your $10 back. Volume
+      grew slowly through the decade.
+    </li>
+    <li>
+      <span class="era">2020–2021 — The boom</span>
+      SPACs exploded during the pandemic: roughly 248 SPAC IPOs raised ~$83&nbsp;billion in
+      2020, then 613 raised ~$162&nbsp;billion in 2021 — more than every prior year
+      combined.<sup><a href="#src7">[7]</a></sup> Celebrity sponsors, pre-revenue EV startups,
+      and meme-stock enthusiasm defined the era. Redemption rates collapsed (investors stopped
+      taking the safe $10 exit), which in hindsight marked the top.<sup><a href="#src4">[4]</a></sup>
+    </li>
+    <li>
+      <span class="era">2022–2023 — The bust</span>
+      Rising rates and dilution gravity caught up. SPACs that merged during the bubble were
+      down over 60% on average by the end of 2022;<sup><a href="#src4">[4]</a></sup> many
+      high-profile de-SPACs (Lordstown Motors, Virgin Orbit) went bankrupt. Hundreds of SPACs
+      liquidated and returned their trusts.
+    </li>
+    <li>
+      <span class="era">January 2024 — The SEC tightens the rules</span>
+      The SEC adopted final SPAC rules requiring expanded disclosure of sponsor compensation,
+      conflicts of interest, and dilution, and stripping away the legal safe harbor that had
+      let de-SPAC targets market rosy revenue projections that traditional IPOs could never
+      use.<sup><a href="#src8">[8]</a></sup>
+    </li>
+    <li>
+      <span class="era">2025–2026 — A disciplined revival</span>
+      The market has partially returned at far smaller scale, with more conventional sponsors,
+      better-aligned structures, and less retail froth — what some practitioners call
+      "SPAC&nbsp;4.0."<sup><a href="#src9">[9]</a></sup>
+    </li>
+  </ul>
+
+  <h2>What the returns data shows</h2>
+  <p>
+    The academic evidence is unusually clear, and it splits SPAC investing into two very
+    different games. The same vehicle that is a reliably decent trade <em>before</em> the merger
+    is a reliably bad one <em>after</em> it.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Strategy</th><th>Return</th><th>Evidence</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Buy at IPO, exit at merger or liquidation</strong> ("SPAC arbitrage")</td>
+        <td class="pos">+23.9%/yr</td>
+        <td>Equally weighted annualized return across 458 SPAC IPOs, 2010–2020. Because of the
+        trust floor, even the <em>worst</em> SPAC in the sample returned +0.51%/yr.<sup><a href="#src3">[3]</a></sup></td>
+      </tr>
+      <tr>
+        <td><strong>Hold through the merger, one year</strong></td>
+        <td class="neg">−11.3%</td>
+        <td>Average one-year buy-and-hold return on post-merger shares, vs <span class="pos">+19.4%</span>
+        for the broad market over the same periods — about 31 points of underperformance.<sup><a href="#src3">[3]</a></sup></td>
+      </tr>
+      <tr>
+        <td><strong>Hold through merger, 2019–20 cohort, 3 months</strong></td>
+        <td class="neg">−14.5%</td>
+        <td>Median post-merger return; six- and twelve-month figures were progressively worse.<sup><a href="#src2">[2]</a></sup></td>
+      </tr>
+      <tr>
+        <td><strong>Hold through merger, bubble cohort (merged Jul 2020–Dec 2021)</strong></td>
+        <td class="neg">−62%</td>
+        <td>Average return measured to December 2022 across 243 mergers — roughly 26 points worse
+        than comparable traditional IPOs.<sup><a href="#src4">[4]</a></sup></td>
+      </tr>
+      <tr>
+        <td><strong>Be the sponsor</strong></td>
+        <td class="pos">+619%</td>
+        <td>Average sponsor gain of ~$51&nbsp;million per completed deal — earned even on deals
+        where public shareholders lost money.<sup><a href="#src3">[3]</a></sup></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Why holding through the merger loses: dilution</h3>
+  <p>
+    The core finding of Klausner and Ohlrogge's <em>A Sober Look at SPACs</em> is that the $10
+    you see is not the $10 the merged company gets. Between the sponsor's free 20% equity stake
+    (the "promote"), underwriting fees, and warrant overhang, the SPACs in their 2019–20 sample
+    delivered a mean of just <strong>$4.10 in net cash per $10 share</strong> (median $5.70) by
+    the time the merger closed.<sup><a href="#src2">[2]</a></sup> Their follow-up study of the
+    bubble cohort found the same structural drain — about 36% of pre-merger equity — and showed
+    that net cash per share predicted the post-merger crash almost
+    one-for-one.<sup><a href="#src4">[4]</a></sup> Consistent with this, going public via SPAC
+    cost the median company about <strong>15.1% of post-issue market cap, versus 3.2%</strong>
+    for a traditional IPO.<sup><a href="#src3">[3]</a></sup>
+  </p>
+  <p>
+    Sophisticated investors respond exactly as you'd expect: in the 2019–20 sample the
+    <em>median</em> SPAC saw 73% of public shares redeemed before the merger, and over a third
+    of SPACs had redemptions above 90%.<sup><a href="#src2">[2]</a></sup> The institutions that
+    buy at the IPO mostly take the $10 and leave; the losses concentrate on whoever stays in —
+    disproportionately retail investors who bought after a deal was announced.
+  </p>
 
   <h2>"Can I invest in a profitable SPAC?"</h2>
   <div class="callout">
@@ -182,59 +349,97 @@
     <tbody>
       <tr>
         <td><strong>Pre-merger</strong></td>
-        <td>A bet on the sponsors finding a good deal. The downside is somewhat protected
-        (you can redeem for ~$10), but the upside depends entirely on a deal that doesn't
-        exist yet.</td>
+        <td>A bet on the sponsors finding a good deal, with the trust as a floor. Bought at or
+        below trust value, this is the historically profitable strategy — but the profit comes
+        from redeeming or selling at the merger, not from holding through it.</td>
       </tr>
       <tr>
         <td><strong>Target announced</strong></td>
-        <td>Now you can actually evaluate the target company's financials — including whether
-        <em>that company</em> is profitable. Historically, most SPAC targets have been
-        early-stage, unprofitable companies; that's often why they chose a SPAC over a
-        traditional IPO, which carries stricter scrutiny.</td>
+        <td>Now there's an actual business to evaluate — including whether <em>that company</em>
+        is profitable. Historically most SPAC targets have been early-stage and unprofitable;
+        that's often why they chose a SPAC over a traditional IPO's stricter scrutiny.</td>
       </tr>
       <tr>
         <td><strong>Post-merger</strong></td>
-        <td>At this point it's just a regular public stock, and normal stock analysis applies.</td>
+        <td>A regular public stock, and normal stock analysis applies — but it carries the
+        dilution baggage above, which is why the average post-merger SPAC underperforms badly.</td>
       </tr>
     </tbody>
   </table>
 
-  <h2>Things to know before putting money in</h2>
+  <h2>What predicts whether a SPAC yields good returns</h2>
+  <p>
+    Researchers have tested most of the intuitive candidates. Roughly in order of how strong
+    the evidence is:
+  </p>
   <ul>
     <li>
-      <strong>The track record is rough.</strong> The 2020–2021 SPAC boom ended badly — the
-      majority of companies that went public via SPAC traded well below $10 afterward, and a
-      meaningful number went bankrupt (Lordstown Motors, Virgin Orbit, and others).
+      <strong>Net cash per share (dilution) — the strongest predictor.</strong> How much real
+      cash survives the promote, fees, warrants, and redemptions, per share. In Klausner and
+      Ohlrogge's regressions, post-merger share value tracks pre-merger net cash per share
+      nearly one-for-one — shareholders bear essentially the entire cost of the
+      structure.<sup><a href="#src4">[4]</a></sup> A SPAC with low dilution (small promote,
+      few warrants, a big PIPE relative to trust) starts the race much closer to $10.
     </li>
     <li>
-      <strong>Sponsor incentives are misaligned with yours.</strong> Sponsors typically get
-      ~20% of the SPAC's equity nearly free (the "promote"), so they profit even from a
-      mediocre deal. They're motivated to close <em>any</em> deal before the deadline — not
-      necessarily a good one.
+      <strong>Redemption rate.</strong> High redemptions are the market's verdict on the deal:
+      they both signal a weak target and mechanically worsen dilution for whoever remains.
+      Higher redemption ratios predict lower post-merger returns.<sup><a href="#src3">[3]</a></sup>
     </li>
     <li>
-      <strong>Dilution.</strong> Warrants and the sponsor promote dilute regular shareholders,
-      which is part of why post-merger prices often sag.
+      <strong>Deadline pressure.</strong> Deals completed close to the SPAC's expiration
+      perform worse — sponsors facing a total loss of their promote will close a mediocre deal
+      rather than no deal.<sup><a href="#src3">[3]</a></sup>
     </li>
     <li>
-      <strong>The redemption right is your safety net.</strong> Buying below trust value
-      pre-merger and redeeming is a low-risk arbitrage strategy some funds run, though returns
-      are modest and your money is locked up.
+      <strong>Target fundamentals.</strong> Post-merger returns are lower for targets with
+      under $100&nbsp;million in trailing revenue, and lower still for unprofitable
+      ones.<sup><a href="#src3">[3]</a></sup> So your instinct about profitability was right —
+      it just applies to the <em>target</em>, not the SPAC.
+    </li>
+    <li>
+      <strong>Sponsor quality — real but weaker than it looks.</strong> SPACs run by sponsors
+      affiliated with billion-dollar funds or former Fortune&nbsp;500 executives do better than
+      average and negotiate less dilutive terms — but many still lost money, and once you
+      control for net cash per share, sponsor quality adds little additional predictive
+      power.<sup><a href="#src2">[2]</a>,<a href="#src4">[4]</a></sup> A famous name does not
+      repeal the arithmetic.
     </li>
   </ul>
-
-  <h2>The bottom line</h2>
   <p>
-    SPACs trade like normal stocks under regular tickers, so anyone with a brokerage account
-    can buy them. Whether you <em>should</em> is a different question — the structural
-    incentives generally favor sponsors over public shareholders. If you do look at one, the
-    most informative moment is after a target is announced: that's when there's an actual
-    business to evaluate.
+    The honest summary: the best-evidenced way to make money in SPACs has been the unglamorous
+    one — buy pre-merger at or below trust value, capture the yield and any deal-announcement
+    pop, and exit via redemption or sale at the merger. For holding through a merger, the
+    checklist is: low dilution, low redemptions, a deal done early rather than at the deadline,
+    a real-revenue profitable target, and a credible sponsor — and even then you're fighting
+    a structure that has historically favored everyone at the table except you.
   </p>
 
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li id="src1">Heyman, "From Blank Check to SPAC: The Regulator's Response to the Market, and the Market's Response to the Regulation," <em>Washington University Law Review</em> —
+      <a href="https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1160&amp;context=law_lawreview">openscholarship.wustl.edu</a></li>
+    <li id="src2">Klausner, Ohlrogge &amp; Ruan, "A Sober Look at SPACs," <em>Yale Journal on Regulation</em> (2022) —
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720919">SSRN 3720919</a></li>
+    <li id="src3">Gahng, Ritter &amp; Zhang, "SPACs," <em>Review of Financial Studies</em> 36(9) (2023) —
+      <a href="https://academic.oup.com/rfs/article-abstract/36/9/3463/7067751">academic.oup.com</a></li>
+    <li id="src4">Klausner &amp; Ohlrogge, "Was the SPAC Crash Predictable?," <em>Yale Journal on Regulation Bulletin</em> 40 (2023) —
+      <a href="https://www.yalejreg.com/wp-content/uploads/Michael-Klausner-Michael-Ohlrogge-Was-the-SPAC-Crash-Predictable-40-Yale.-J.-on-Regul.-Bulletin-101-2023.pdf">yalejreg.com</a></li>
+    <li id="src5">Klausner &amp; Ohlrogge, "A Second Look at SPACs: Is This Time Different?," Harvard Law School Forum on Corporate Governance (2022) —
+      <a href="https://corpgov.law.harvard.edu/2022/01/24/a-second-look-at-spacs-is-this-time-different/">corpgov.law.harvard.edu</a></li>
+    <li id="src6">Accelerate, "The Art of SPAC Arbitrage" —
+      <a href="https://accelerateshares.com/wp-content/uploads/2020/05/The-Art-of-SPAC-Arbitrage-1.pdf">accelerateshares.com</a></li>
+    <li id="src7">SPACInsider, SPAC IPO statistics —
+      <a href="https://www.spacinsider.com/data/stats">spacinsider.com/data/stats</a></li>
+    <li id="src8">SEC, "SEC Adopts Rules to Enhance Investor Protections Relating to SPACs, Shell Companies, and Projections" (Jan 24, 2024) —
+      <a href="https://www.sec.gov/newsroom/press-releases/2024-8">sec.gov</a></li>
+    <li id="src9">Foley &amp; Lardner, "SPAC 4.0: From Spectacular Failures to a Disciplined Renaissance" (2025) —
+      <a href="https://www.foley.com/insights/publications/2025/09/spac-4-0-from-spectacular-failures-to-a-disciplined-renaissance/">foley.com</a></li>
+  </ol>
+
   <footer>
-    This page is for educational purposes only and is not investment advice.
+    This page is for educational purposes only and is not investment advice. Figures are drawn
+    from the cited studies; study periods differ, so numbers are not directly comparable across rows.
   </footer>
 </main>
 </body>
