@@ -140,14 +140,17 @@
 <nav class="outline" aria-label="Outline">
   <a href="#basics">The basics</a>
   <a class="sub" href="#lifecycle">The lifecycle</a>
-  <a href="#history">1 · The history</a>
-  <a href="#returns">2 · The returns evidence</a>
+  <a href="#returns">1 · The returns evidence</a>
   <a class="sub" href="#dilution">Why holding loses</a>
   <a class="sub" href="#profitable">The "profitable" question</a>
-  <a href="#predictors">3 · What predicts returns</a>
+  <a href="#predictors">2 · What predicts returns</a>
+  <a href="#casestudy">3 · The case study</a>
+  <a class="sub" href="#scorecard">The scorecard</a>
   <a href="#scams">4 · Useful or scam?</a>
   <a class="sub" href="#fraud">Fraud tells</a>
   <a class="sub" href="#badstructure">Legal-but-bad tells</a>
+  <a class="sub" href="#verdict">Scam or inefficient?</a>
+  <a href="#history">5 · The history</a>
   <a href="#sources">Sources</a>
 </nav>
 
@@ -163,11 +166,11 @@
       money before knowing what business they'll end up owning.
     </p>
     <nav class="toc" aria-label="Contents">
-      <a href="#history">The history</a>
       <a href="#returns">The returns evidence</a>
-      <a href="#profitable">The "profitable" question</a>
       <a href="#predictors">What predicts returns</a>
+      <a href="#casestudy">The case study</a>
       <a href="#scams">Useful or scam?</a>
+      <a href="#history">The history</a>
       <a href="#sources">Sources</a>
     </nav>
 
@@ -204,75 +207,8 @@
     </table>
   </section>
 
-  <section id="history">
-    <div class="eyebrow">Part 1 · The history</div>
-    <h2>From penny-stock fraud to "SPAC 4.0"</h2>
-    <table>
-      <thead>
-        <tr><th>Era</th><th>What happened</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>1980s</strong><br><span class="pill">fraud era</span></td>
-          <td>Blank-check shells flourish in the penny-stock world as vehicles for pump-and-dump fraud:
-          promoters raise money with no disclosed business plan, then loot or manipulate the shells.</td>
-        </tr>
-        <tr>
-          <td><strong>1990–92</strong><br><span class="pill">Rule 419</span></td>
-          <td>Congress passes the Penny Stock Reform Act of 1990; the SEC's Rule&nbsp;419 imposes escrow
-          and rescission requirements so onerous that blank-check companies are effectively eliminated
-          from the U.S. market.<sup><a href="#sources">[1]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>1993</strong><br><span class="pill">the SPAC is born</span></td>
-          <td>Investment banker David Nussbaum of GKN Securities engineers a hybrid: legally exempt from
-          Rule&nbsp;419 (holding over $5M in assets, its stock isn't "penny stock") but voluntarily adopting
-          nearly all of its protections — the trust, the redemption right, the deadline. Thirteen launch in
-          1993–94; twelve complete acquisitions.<sup><a href="#sources">[1]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>2004–07</strong><br><span class="pill">second wave</span></td>
-          <td>SPAC IPOs grow from 12 in 2004 to 65 in 2007 — 26.6% of all U.S. IPOs that year. Deals turn
-          institutional: Liberty Acquisition Holdings raises $1.035B in December 2007. Cumulative money
-          raised passes $15B, with roughly 10% aggregate annualized returns to that
-          point.<sup><a href="#sources">[1]</a></sup> The 2008 crisis then freezes the market.</td>
-        </tr>
-        <tr>
-          <td><strong>2010s</strong><br><span class="pill">rebuilding</span></td>
-          <td>The structure steadily improves for investors — most importantly, redemption rights are
-          decoupled from merger votes, so you can vote yes and still take your $10 back.</td>
-        </tr>
-        <tr>
-          <td><strong>2020–21</strong><br><span class="pill">the boom</span></td>
-          <td>SPACs explode during the pandemic: ~248 IPOs raise ~$83B in 2020, then 613 raise ~$162B in
-          2021 — more than every prior year combined.<sup><a href="#sources">[7]</a></sup> Celebrity sponsors,
-          pre-revenue EV startups, meme-stock enthusiasm. Redemption rates collapse (investors stop taking
-          the safe $10 exit), which in hindsight marks the top.<sup><a href="#sources">[4]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>2022–23</strong><br><span class="pill">the bust</span></td>
-          <td>Rising rates and dilution gravity catch up. Bubble-era mergers are down over 60% on average
-          by end-2022;<sup><a href="#sources">[4]</a></sup> high-profile de-SPACs (Lordstown Motors, Virgin
-          Orbit) go bankrupt. Hundreds of SPACs liquidate and return their trusts.</td>
-        </tr>
-        <tr>
-          <td><strong>Jan 2024</strong><br><span class="pill">SEC rules</span></td>
-          <td>The SEC adopts final SPAC rules: expanded disclosure of sponsor compensation, conflicts, and
-          dilution, and removal of the legal safe harbor that let de-SPAC targets market rosy revenue
-          projections traditional IPOs could never use.<sup><a href="#sources">[8]</a></sup></td>
-        </tr>
-        <tr>
-          <td><strong>2025–26</strong><br><span class="pill">"SPAC 4.0"</span></td>
-          <td>A partial revival at far smaller scale, with more conventional sponsors, better-aligned
-          structures, and less retail froth.<sup><a href="#sources">[9]</a></sup></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="bigstat"><div class="value">$162B</div><div class="label">Raised by 613 SPAC IPOs in 2021 alone — more than every prior year in SPAC history combined.</div></div>
-  </section>
-
   <section id="returns">
-    <div class="eyebrow">Part 2 · The returns evidence</div>
+    <div class="eyebrow">Part 1 · The returns evidence</div>
     <h2>Two very different games</h2>
     <p class="section-note">
       The academic evidence is unusually clear, and it splits SPAC investing in two. The same vehicle
@@ -370,7 +306,7 @@
   </section>
 
   <section id="predictors">
-    <div class="eyebrow">Part 3 · What predicts returns</div>
+    <div class="eyebrow">Part 2 · What predicts returns</div>
     <h2>The factors, ranked by evidence</h2>
     <p class="section-note" style="margin-bottom:10px">
       Researchers have tested most of the intuitive candidates. <strong>Weight</strong> is how strongly
@@ -429,6 +365,103 @@
     </div>
   </section>
 
+  <section id="casestudy">
+    <div class="eyebrow">Part 3 · The case study</div>
+    <h2>DraftKings vs Lordstown: the checklist, tested</h2>
+    <p class="section-note">
+      Both were hyped 2020 SPAC mergers in hot sectors. One trades around three times its $10 trust value
+      six years later; the other was bankrupt within three. The useful exercise is to score both deals
+      using only what was knowable on announcement day — and the Part&nbsp;2 checklist catches it.
+    </p>
+
+    <h3>The two deals at announcement</h3>
+    <table>
+      <thead>
+        <tr><th></th><th>DraftKings · Diamond Eagle</th><th>Lordstown · DiamondPeak</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Announced</strong></td>
+          <td>December 2019</td>
+          <td>August 2020</td>
+        </tr>
+        <tr>
+          <td><strong>The SPAC</strong></td>
+          <td>$400M IPO (May 2019) — the fifth "Eagle" SPAC from media dealmakers Harry Sloan and
+          Jeff Sagansky<sup><a href="#sources">[10]</a></sup></td>
+          <td>$250M IPO (March 2019) targeting "a business with a real estate related component";
+          sponsor David Hamamoto, a real-estate executive<sup><a href="#sources">[11]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>The deal</strong></td>
+          <td>~$3.3B three-way merger with sportsbook platform SBTech; ~$380M PIPE (upsized from $304M)
+          from Capital Research, Wellington, and Franklin Templeton<sup><a href="#sources">[10]</a></sup></td>
+          <td>~$1.6B pro forma equity value; $500M PIPE including $75M from General Motors, partly
+          in-kind<sup><a href="#sources">[11]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>The target</strong></td>
+          <td>~$323M of 2019 revenue, millions of paying customers, an eight-year operating history</td>
+          <td>Zero revenue, no production line, one prototype truck, and "100,000 pre-orders" —
+          disclosed as non-binding</td>
+        </tr>
+        <tr>
+          <td><strong>Outcome</strong></td>
+          <td class="pos">Closed April 2020 with 99.7% approval and negligible redemptions; peaked near
+          $74 in March 2021; ~$30 in June 2026 — roughly +200% from trust value</td>
+          <td class="neg">Closed October 2020; peaked ~$31 in February 2021; Hindenburg report March 2021
+          found the pre-orders largely fictitious; CEO resigned June 2021; Chapter&nbsp;11 in June 2023;
+          SEC charged it with misleading investors (settled via $25.5M disgorgement); the leftover shell
+          trades under $2<sup><a href="#sources">[12]</a>,<a href="#sources">[13]</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="scorecard">Scoring the factors at announcement time</h3>
+    <table>
+      <thead>
+        <tr><th>Factor</th><th>DraftKings</th><th>Lordstown</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Target fundamentals</td>
+          <td><span class="pos">Real revenue, real customers</span></td>
+          <td><span class="neg">Pre-revenue, pre-product</span></td>
+        </tr>
+        <tr>
+          <td>Verifiability</td>
+          <td><span class="pos">Audited revenue, auditable user counts</span></td>
+          <td><span class="neg">Demand evidence was non-binding letters of intent — disclosed as such in
+          the filings</span></td>
+        </tr>
+        <tr>
+          <td>Sponsor–target fit</td>
+          <td><span class="pos">Serial media/consumer SPAC sponsors on their fifth deal</span></td>
+          <td><span class="neg">A real-estate SPAC pivoting to an EV startup</span></td>
+        </tr>
+        <tr>
+          <td>Deadline pressure</td>
+          <td><span class="pos">Deal struck ~7 months into the SPAC's window</span></td>
+          <td><span class="neg">~17 months into a 24-month window, off the original thesis</span></td>
+        </tr>
+        <tr>
+          <td>What the pitch leaned on</td>
+          <td><span class="pos">An existing revenue ramp plus state-by-state legalization</span></td>
+          <td><span class="neg">Hockey-stick projections from zero — the kind the SEC stripped of
+          safe-harbor protection in 2024</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Two honest caveats.</strong> First, hindsight bias is real — but every signal in the table
+      above sat in the announcement-day filings, which is the point of the exercise. Second, the market
+      took months to care: Lordstown <em>tripled</em> after its announcement and didn't collapse until
+      the Hindenburg report, five months after closing. The checklist tells you what to avoid holding;
+      it does not tell you when gravity arrives.
+    </div>
+  </section>
+
   <section id="scams">
     <div class="eyebrow">Part 4 · Useful or scam?</div>
     <h2>How to spot a bad one</h2>
@@ -482,7 +515,7 @@
 
     <h3 id="badstructure">Legal-but-bad tells</h3>
     <p class="section-note" style="margin-bottom:10px">
-      This is where most investor losses actually come from — the predictors in Part&nbsp;3, applied as
+      This is where most investor losses actually come from — the predictors in Part&nbsp;2, applied as
       a checklist:
     </p>
     <table>
@@ -530,6 +563,99 @@
       your personal insurance: until the merger closes, you can always take the ~$10 back, and no
       legitimate argument for a deal ever requires you to give that up early.
     </div>
+
+    <h3 id="verdict">So are SPACs scams, or just inefficient?</h3>
+    <p class="section-note">
+      Start by correcting the premise: SPACs don't benefit only one party. Tally the table — sponsors
+      averaged +619% per completed deal; IPO-stage funds earned +23.9%/yr with a floor under them; and
+      targets got something real too: speed, price certainty, and (pre-2024) the right to market
+      projections, with the structure's costs effectively shifted off them.<sup><a href="#sources">[3]</a></sup>
+      The SPAC isn't a machine that benefits one party — it's a machine that benefits <em>every party at
+      the table except the one who holds through the merger</em>. That seat was disproportionately filled
+      by retail investors buying after a deal was announced.
+    </p>
+    <p class="section-note">
+      That's why the academic verdict is "inefficient," not "scam." A scam requires deception, and the
+      SPAC's costs are disclosed — the promote, the warrants, and the dilution table are all in the proxy.
+      Klausner and Ohlrogge's word for it is <em>obscured</em>: legal, printed, and systematically ignored,
+      which is how the market mispriced the structure for a decade.<sup><a href="#sources">[2]</a></sup>
+      An inefficient structure can persist exactly as long as its losing seat keeps getting refilled with
+      less-informed money; the 2020–21 bubble was that dynamic at maximum scale, and the bust, the
+      redemption snap-back, and the 2024 SEC rules are the market and the regulator repricing it.
+    </p>
+    <div class="callout">
+      <strong>The clean way to hold both ideas:</strong> the structure is inefficient by design; individual
+      deals are sometimes scams. Disclosed dilution you didn't read is inefficiency — Lordstown-style
+      misrepresentation is fraud, and it gets prosecuted as fraud. The line between the two is whether your
+      losses came from the proxy you skipped or from a lie.
+    </div>
+  </section>
+
+  <section id="history">
+    <div class="eyebrow">Part 5 · The history</div>
+    <h2>From penny-stock fraud to "SPAC 4.0"</h2>
+    <table>
+      <thead>
+        <tr><th>Era</th><th>What happened</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1980s</strong><br><span class="pill">fraud era</span></td>
+          <td>Blank-check shells flourish in the penny-stock world as vehicles for pump-and-dump fraud:
+          promoters raise money with no disclosed business plan, then loot or manipulate the shells.</td>
+        </tr>
+        <tr>
+          <td><strong>1990–92</strong><br><span class="pill">Rule 419</span></td>
+          <td>Congress passes the Penny Stock Reform Act of 1990; the SEC's Rule&nbsp;419 imposes escrow
+          and rescission requirements so onerous that blank-check companies are effectively eliminated
+          from the U.S. market.<sup><a href="#sources">[1]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>1993</strong><br><span class="pill">the SPAC is born</span></td>
+          <td>Investment banker David Nussbaum of GKN Securities engineers a hybrid: legally exempt from
+          Rule&nbsp;419 (holding over $5M in assets, its stock isn't "penny stock") but voluntarily adopting
+          nearly all of its protections — the trust, the redemption right, the deadline. Thirteen launch in
+          1993–94; twelve complete acquisitions.<sup><a href="#sources">[1]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>2004–07</strong><br><span class="pill">second wave</span></td>
+          <td>SPAC IPOs grow from 12 in 2004 to 65 in 2007 — 26.6% of all U.S. IPOs that year. Deals turn
+          institutional: Liberty Acquisition Holdings raises $1.035B in December 2007. Cumulative money
+          raised passes $15B, with roughly 10% aggregate annualized returns to that
+          point.<sup><a href="#sources">[1]</a></sup> The 2008 crisis then freezes the market.</td>
+        </tr>
+        <tr>
+          <td><strong>2010s</strong><br><span class="pill">rebuilding</span></td>
+          <td>The structure steadily improves for investors — most importantly, redemption rights are
+          decoupled from merger votes, so you can vote yes and still take your $10 back.</td>
+        </tr>
+        <tr>
+          <td><strong>2020–21</strong><br><span class="pill">the boom</span></td>
+          <td>SPACs explode during the pandemic: ~248 IPOs raise ~$83B in 2020, then 613 raise ~$162B in
+          2021 — more than every prior year combined.<sup><a href="#sources">[7]</a></sup> Celebrity sponsors,
+          pre-revenue EV startups, meme-stock enthusiasm. Redemption rates collapse (investors stop taking
+          the safe $10 exit), which in hindsight marks the top.<sup><a href="#sources">[4]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>2022–23</strong><br><span class="pill">the bust</span></td>
+          <td>Rising rates and dilution gravity catch up. Bubble-era mergers are down over 60% on average
+          by end-2022;<sup><a href="#sources">[4]</a></sup> high-profile de-SPACs (Lordstown Motors, Virgin
+          Orbit) go bankrupt. Hundreds of SPACs liquidate and return their trusts.</td>
+        </tr>
+        <tr>
+          <td><strong>Jan 2024</strong><br><span class="pill">SEC rules</span></td>
+          <td>The SEC adopts final SPAC rules: expanded disclosure of sponsor compensation, conflicts, and
+          dilution, and removal of the legal safe harbor that let de-SPAC targets market rosy revenue
+          projections traditional IPOs could never use.<sup><a href="#sources">[8]</a></sup></td>
+        </tr>
+        <tr>
+          <td><strong>2025–26</strong><br><span class="pill">"SPAC 4.0"</span></td>
+          <td>A partial revival at far smaller scale, with more conventional sponsors, better-aligned
+          structures, and less retail froth.<sup><a href="#sources">[9]</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="bigstat"><div class="value">$162B</div><div class="label">Raised by 613 SPAC IPOs in 2021 alone — more than every prior year in SPAC history combined.</div></div>
   </section>
 
   <section id="sources">
@@ -554,6 +680,14 @@
         <a href="https://www.sec.gov/newsroom/press-releases/2024-8">sec.gov</a></li>
       <li>Foley &amp; Lardner, "SPAC 4.0: From Spectacular Failures to a Disciplined Renaissance" (2025) —
         <a href="https://www.foley.com/insights/publications/2025/09/spac-4-0-from-spectacular-failures-to-a-disciplined-renaissance/">foley.com</a></li>
+      <li>Deadline, "DraftKings To Go Public In $3.3B Merger With Diamond Eagle" (Dec 23, 2019) —
+        <a href="https://deadline.com/2019/12/draftkings-to-go-public-in-3-3b-merger-with-diamond-eagle-1202816362/">deadline.com</a></li>
+      <li>Business Wire, "Lordstown Motors Corp. to List on NASDAQ Through Merger With DiamondPeak Holdings Corp." (Aug 3, 2020) —
+        <a href="https://www.businesswire.com/news/home/20200803005226/en/Lordstown-Motors-Corp.-to-List-on-NASDAQ-Through-Merger-With-DiamondPeak-Holdings-Corp.">businesswire.com</a></li>
+      <li>Hindenburg Research, "The Lordstown Motion: How an Ohio Garage Startup Faked Orders" (Mar 2021) —
+        <a href="https://hindenburgresearch.com/lordstown/">hindenburgresearch.com</a></li>
+      <li>SEC, "SEC Charges Lordstown Motors with Misleading Investors about Company's Flagship Electric Vehicle" (Feb 29, 2024) —
+        <a href="https://www.sec.gov/newsroom/press-releases/2024-29">sec.gov</a></li>
     </ol>
   </section>
 
